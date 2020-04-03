@@ -3,3 +3,7 @@ DatingApp.API/.vscode
 DatingApp.API/obj
 DatingApp.API/bin
 *.db
+
+*.db-shm
+
+*.db-wal
