@@ -16,6 +16,7 @@ import { AppComponent } from './app.component';
 import { ValueComponent } from './value/value.component';
 import { NavComponent } from './nav/nav.component';
 import { LoginComponent } from './login/login.component';
+import { AuthService } from './_services/auth.service';
 
 @NgModule({
   declarations: [AppComponent, ValueComponent, NavComponent, LoginComponent],
@@ -33,7 +34,7 @@ import { LoginComponent } from './login/login.component';
     MatButtonModule,
     MatCardModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
