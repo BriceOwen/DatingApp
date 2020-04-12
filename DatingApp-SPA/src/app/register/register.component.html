@@ -1,12 +1,12 @@
 <div fxLayoutAlign="center center" fxFlexFill class="main-div">
   <mat-card fxFlex="25">
-    <mat-toolbar color="primary">Login</mat-toolbar>
+    <mat-toolbar color="primary">Register</mat-toolbar>
     <form
-      #loginForm="ngForm"
+      #registerForm="ngForm"
       fxLayoutAlign="stretch"
       fxLayout="column"
-      class="login-form"
-      (ngSubmit)="login()"
+      class="register-form"
+      (ngSubmit)="register()"
     >
       <mat-form-field>
         <input
@@ -28,10 +28,14 @@
           [(ngModel)]="model.password"
         />
       </mat-form-field>
-      <button [disabled]="!loginForm.valid" mat-raised-button type="submit">
-        Login
+      <button mat-raised-button type="submit" color="accent" class="v-space">
+        Register
       </button>
-      <p class="auth-link">Don't have an account? <a>Register</a></p>
+      <button mat-raised-button type="button" (click)="cancel()">
+        Cancel
+      </button>
+
+      <p class="auth-link">Have an account? <a>Sign In</a></p>
     </form>
   </mat-card>
 </div>

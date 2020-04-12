@@ -1,12 +1,19 @@
 <mat-toolbar color="primary" class="mat-elevation-z6">
-  <span><mat-icon>eco</mat-icon>Dating</span>
+  <a mat-button routerLink="/"><mat-icon>eco</mat-icon>Dating</a>
 
   <div class="spacer"></div>
 
   <a mat-button routerLink="matches">Matches</a>
   <a mat-button routerLink="lists">Lists</a>
   <a mat-button routerLink="messages">Messages</a>
-  <!-- <a mat-raised-button color="accent" routerLink="signup">Sign Up</a> -->
-  <a mat-button routerLink="signup">Register</a>
-  <a mat-button routerLink="signup">Login</a>
+  <a *ngIf="!loggedIn()" mat-raised-button color="accent" routerLink="signin"
+    >Sign Up</a
+  >
+  <button *ngIf="loggedIn()" mat-button [matMenuTriggerFor]="menu">
+    <mat-icon>account_circle</mat-icon>Welcome User
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Edit profile</button>
+    <button mat-menu-item (click)="logout()">Logout</button>
+  </mat-menu>
 </mat-toolbar>
